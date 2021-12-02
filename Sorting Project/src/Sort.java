@@ -25,7 +25,6 @@ public class Sort
 		public static void main(String[] args)
 			{
 				askParameters();
-				
 				generateNums();
 
 				sSortArray = arrayNums;
@@ -34,9 +33,9 @@ public class Sort
 				mSortArray = arrayNums;
 				bArray = arrayNums;
 				
-				
 				for(int i = 0; i < numSim; i++)
 					{
+						//just testing the timing
 						SelectionSort.selectionSort(sSortArray);
 						System.out.println("milliseconds for Selection: " + SelectionSort.finalSelection);
 						MergeSortDemo.mergeSort(mSortArray, mSortArray.length);
@@ -47,7 +46,6 @@ public class Sort
 						System.out.println("milliseconds for Insertion: " + InsertionSort.finalInsertion);
 						BubbleSort.bubbleSort(bArray);
 						System.out.println("milliseconds for Bubble: " + BubbleSort.finalBubble);
-						
 					}			
 				//printFinal();
 			}
