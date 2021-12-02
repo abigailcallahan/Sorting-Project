@@ -2,6 +2,11 @@ import java.util.Date;
 
 public class QuicksortInt
 	{
+		static Date pastQuick;
+		static Date futureQuick;
+		
+		static long finalQuick;
+		
 	static int [ ] qsort(int items[])
 		{
 		qs(items, 0, items.length - 1);
@@ -10,6 +15,7 @@ public class QuicksortInt
 
 	private static void qs(int items[], int left, int right)
 		{
+		pastQuick = new Date();
 		int i, j;
 		int pivot, temp;
 		i = left;
@@ -40,5 +46,10 @@ public class QuicksortInt
 		
 		if (i < right)
 			qs (items, i, right);
-		}	
+		futureQuick = new Date();
+		
+		finalQuick = futureQuick.getTime() - pastQuick.getTime();
+		}
+	
+	
 	}

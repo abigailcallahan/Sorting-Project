@@ -2,8 +2,15 @@ import java.util.Date;
 
 public class BubbleSort
 	{
+		static Date pastBubble;
+		static Date futureBubble;
+		
+		static long finalBubble;
+		
 		public static void bubbleSort(int[] arr) 
 			{
+				pastBubble = new Date();
+				
 				int n = arr.length;  
 		        int temp = 0;  
 		        for(int i=0; i < n; i++)
@@ -20,5 +27,8 @@ public class BubbleSort
 		                          
 		        			}
 		        	}
+		        futureBubble = new Date();
+				
+				finalBubble = futureBubble.getTime() - pastBubble.getTime();
 		    }  
 	}

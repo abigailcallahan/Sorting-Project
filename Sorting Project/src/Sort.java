@@ -37,12 +37,17 @@ public class Sort
 				
 				for(int i = 0; i < numSim; i++)
 					{
-						//SelectionSort.selectionSort(sSortArray);
+						SelectionSort.selectionSort(sSortArray);
+						System.out.println("milliseconds for Selection: " + SelectionSort.finalSelection);
 						MergeSortDemo.mergeSort(mSortArray, mSortArray.length);
 						System.out.println("milliseconds for Merge: " + MergeSortDemo.finalMerge);
-						//QuicksortInt.qsort(qSortArray);
-						//InsertionSort.insertionSort(iSortArray);
-						//BubbleSort.bubbleSort(bArray);
+						QuicksortInt.qsort(qSortArray);
+						System.out.println("milliseconds for Quick: " + QuicksortInt.finalQuick);
+						InsertionSort.insertionSort(iSortArray);
+						System.out.println("milliseconds for Insertion: " + InsertionSort.finalInsertion);
+						BubbleSort.bubbleSort(bArray);
+						System.out.println("milliseconds for Bubble: " + BubbleSort.finalBubble);
+						
 					}			
 				//printFinal();
 			}
