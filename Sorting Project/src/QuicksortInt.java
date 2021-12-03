@@ -1,11 +1,12 @@
-import java.util.Date;
+
+import java.text.DecimalFormat;
 
 public class QuicksortInt
 	{
-		static Date pastQuick;
-		static Date futureQuick;
+		static double pastQuick;
+		static double futureQuick;
 		
-		static long finalQuick;
+		static double finalQuick;
 		
 	static int [ ] qsort(int items[])
 		{
@@ -15,7 +16,7 @@ public class QuicksortInt
 
 	private static void qs(int items[], int left, int right)
 		{
-		pastQuick = new Date();
+		pastQuick = System.currentTimeMillis();
 		int i, j;
 		int pivot, temp;
 		i = left;
@@ -46,9 +47,9 @@ public class QuicksortInt
 		
 		if (i < right)
 			qs (items, i, right);
-		futureQuick = new Date();
+		futureQuick = System.currentTimeMillis();
 		
-		finalQuick = futureQuick.getTime() - pastQuick.getTime();
+		finalQuick = (futureQuick - pastQuick) / Sort.numSim;
 		}
 	
 	

@@ -1,15 +1,16 @@
-import java.util.Date;
+
+import java.text.DecimalFormat;
 
 public class InsertionSort
 	{
-		static Date pastInsertion;
-		static Date futureInsertion;
+		static double pastInsertion;
+		static double futureInsertion;
 		
-		static long finalInsertion;
+		static double finalInsertion;
 		
 		public static void insertionSort(int[ ] elements)
 			{
-				pastInsertion = new Date();
+				pastInsertion = System.currentTimeMillis();
 			 	for (int i = 1; i < elements.length; i++)
 			 		{
 			 		int temp = elements[i];
@@ -20,9 +21,10 @@ public class InsertionSort
 			 			possibleIndex--;
 			 			}
 			 		elements[possibleIndex] = temp;
-			 		futureInsertion = new Date();
+			 		
+			 		futureInsertion = System.currentTimeMillis();
 					
-					finalInsertion = futureInsertion.getTime() - pastInsertion.getTime();
+					finalInsertion = (futureInsertion - pastInsertion) / Sort.numSim;
 			 }
 			 	
 			 		

@@ -5,7 +5,7 @@ public class Sort
 	{
 		static String enter;
 		static Scanner input = new Scanner(System.in);
-		static int numSim;
+		static double numSim;
 		static int numOfNums;
 		static int nums;
 		static int[] arrayNums;
@@ -16,11 +16,7 @@ public class Sort
 		static int[] mSortArray;
 		static int[] bArray;
 		
-		static Date past = new Date();
-		//sort here
-		static Date future = new Date();
-		
-		//System.out.println("Time (milliseconds) = " + (future.getTime() - past.getTime()));
+
 		
 		public static void main(String[] args)
 			{
@@ -33,20 +29,29 @@ public class Sort
 				mSortArray = arrayNums;
 				bArray = arrayNums;
 				
-				for(int i = 0; i < numSim; i++)
-					{
-						//just testing the timing
+				
+			
 						SelectionSort.selectionSort(sSortArray);
-						System.out.println("milliseconds for Selection: " + SelectionSort.finalSelection);
+						System.out.println("seconds for Selection: " + SelectionSort.finalSelection);
+						
 						MergeSortDemo.mergeSort(mSortArray, mSortArray.length);
-						System.out.println("milliseconds for Merge: " + MergeSortDemo.finalMerge);
+						System.out.println("seconds for Merge: " +  MergeSortDemo.finalMerge);
+						
 						QuicksortInt.qsort(qSortArray);
-						System.out.println("milliseconds for Quick: " + QuicksortInt.finalQuick);
+						System.out.println("seconds for Quick: " + QuicksortInt.finalQuick);
+						
+						
 						InsertionSort.insertionSort(iSortArray);
-						System.out.println("milliseconds for Insertion: " + InsertionSort.finalInsertion);
+						System.out.println("seconds for Insertion: " + InsertionSort.finalInsertion);
+						
+						
 						BubbleSort.bubbleSort(bArray);
-						System.out.println("milliseconds for Bubble: " + BubbleSort.finalBubble);
-					}			
+						System.out.println("seconds for Bubble: " + BubbleSort.finalBubble);
+						
+						
+						System.out.println();
+			
+				
 				//printFinal();
 			}
 		

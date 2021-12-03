@@ -1,16 +1,17 @@
-import java.util.Date;
+import java.text.DecimalFormat;
+
 
 class MergeSortDemo
 	{
 
-		static Date pastMerge;
-		static Date futureMerge;
+		static double pastMerge;
+		static double futureMerge;
 		
-		static long finalMerge;
+		static double finalMerge;
 		
 		public static void merge(int[] left_arr, int[] right_arr, int[] arr, int left_size, int right_size)
 			{
-				pastMerge = new Date();
+				pastMerge = System.currentTimeMillis();
 				
 				int i = 0, l = 0, r = 0;
 				// The while loops check the conditions for merging
@@ -66,10 +67,10 @@ class MergeSortDemo
 				mergeSort(right_arr, len - mid);
 				// Calling the merge method on each subdivision
 				merge(left_arr, right_arr, arr, mid, len - mid);
+
+				futureMerge = System.currentTimeMillis();
 				
-				futureMerge = new Date();
-				
-				finalMerge = futureMerge.getTime() - pastMerge.getTime();
+				finalMerge = (futureMerge - pastMerge) / Sort.numSim;
 			}
 
 		public static void main(String args[])

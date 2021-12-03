@@ -1,15 +1,16 @@
-import java.util.Date;
+
+import java.text.DecimalFormat;
 
 public class BubbleSort
 	{
-		static Date pastBubble;
-		static Date futureBubble;
+		static double pastBubble;
+		static double futureBubble;
 		
-		static long finalBubble;
+		static double finalBubble;
 		
 		public static void bubbleSort(int[] arr) 
 			{
-				pastBubble = new Date();
+				pastBubble = System.currentTimeMillis();
 				
 				int n = arr.length;  
 		        int temp = 0;  
@@ -27,8 +28,8 @@ public class BubbleSort
 		                          
 		        			}
 		        	}
-		        futureBubble = new Date();
+		        futureBubble = System.currentTimeMillis();
 				
-				finalBubble = futureBubble.getTime() - pastBubble.getTime();
+				finalBubble = (futureBubble - pastBubble) / Sort.numSim;
 		    }  
 	}
