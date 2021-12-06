@@ -1,5 +1,4 @@
 
-import java.text.DecimalFormat;
 
 public class InsertionSort
 	{
@@ -10,7 +9,7 @@ public class InsertionSort
 		
 		public static void insertionSort(int[ ] elements)
 			{
-				pastInsertion = System.currentTimeMillis();
+				
 			 	for (int i = 1; i < elements.length; i++)
 			 		{
 			 		int temp = elements[i];
@@ -22,10 +21,10 @@ public class InsertionSort
 			 			}
 			 		elements[possibleIndex] = temp;
 			 		
-			 		futureInsertion = System.currentTimeMillis();
-					
-					finalInsertion = (futureInsertion - pastInsertion) / Sort.numSim;
-			 }
+			 		
+			 		}
+			 	
+				finalInsertion = (futureInsertion - pastInsertion) / 1000;
 			 	
 			 		
 			}

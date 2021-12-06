@@ -11,7 +11,7 @@ class MergeSortDemo
 		
 		public static void merge(int[] left_arr, int[] right_arr, int[] arr, int left_size, int right_size)
 			{
-				pastMerge = System.currentTimeMillis();
+
 				
 				int i = 0, l = 0, r = 0;
 				// The while loops check the conditions for merging
@@ -68,9 +68,9 @@ class MergeSortDemo
 				// Calling the merge method on each subdivision
 				merge(left_arr, right_arr, arr, mid, len - mid);
 
-				futureMerge = System.currentTimeMillis();
 				
-				finalMerge = (futureMerge - pastMerge) / Sort.numSim;
+				finalMerge = (futureMerge - pastMerge) / 1000;
+				
 			}
 
 		public static void main(String args[])
@@ -83,6 +83,7 @@ class MergeSortDemo
 						System.out.print(array[i] + " ");
 					}
 			}
+		
 		
 			
 	}

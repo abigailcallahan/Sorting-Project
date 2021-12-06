@@ -1,5 +1,4 @@
 
-import java.text.DecimalFormat;
 
 public class QuicksortInt
 	{
@@ -16,7 +15,7 @@ public class QuicksortInt
 
 	private static void qs(int items[], int left, int right)
 		{
-		pastQuick = System.currentTimeMillis();
+
 		int i, j;
 		int pivot, temp;
 		i = left;
@@ -47,9 +46,9 @@ public class QuicksortInt
 		
 		if (i < right)
 			qs (items, i, right);
-		futureQuick = System.currentTimeMillis();
+
 		
-		finalQuick = (futureQuick - pastQuick) / Sort.numSim;
+		finalQuick = (futureQuick - pastQuick) / 1000;
 		}
 	
 	

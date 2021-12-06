@@ -1,5 +1,4 @@
 
-import java.text.DecimalFormat;
 
 public class BubbleSort
 	{
@@ -10,7 +9,7 @@ public class BubbleSort
 		
 		public static void bubbleSort(int[] arr) 
 			{
-				pastBubble = System.currentTimeMillis();
+				
 				
 				int n = arr.length;  
 		        int temp = 0;  
@@ -28,8 +27,8 @@ public class BubbleSort
 		                          
 		        			}
 		        	}
-		        futureBubble = System.currentTimeMillis();
+		        
 				
-				finalBubble = (futureBubble - pastBubble) / Sort.numSim;
+				finalBubble = (futureBubble - pastBubble) / 1000;
 		    }  
 	}
