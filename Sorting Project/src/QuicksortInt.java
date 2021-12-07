@@ -5,7 +5,7 @@ public class QuicksortInt
 		static double pastQuick;
 		static double futureQuick;
 		
-		static double finalQuick;
+
 		
 	static int [ ] qsort(int items[])
 		{
@@ -48,7 +48,7 @@ public class QuicksortInt
 			qs (items, i, right);
 
 		
-		finalQuick = (futureQuick - pastQuick) / 1000;
+
 		}
 	
 	

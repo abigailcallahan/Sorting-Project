@@ -5,10 +5,8 @@ public class SelectionSort
 	{
 		static double pastSelection;
 		static double futureSelection;
+	
 		
-
-		
-		static double finalSelection;
 		
 		public static void selectionSort(int[] elements)
 			{
@@ -29,7 +27,7 @@ public class SelectionSort
 					}
 				
 				
-				finalSelection = (futureSelection - pastSelection) / 1000;
+				
 				
 				
 			}

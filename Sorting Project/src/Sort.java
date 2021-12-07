@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.*;
 import java.util.Collections;
 import java.util.Date;
 import java.util.ArrayList;
@@ -18,8 +19,13 @@ public class Sort
 		static int[] mSortArray;
 		static int[] bArray;
 		
+		static double finalSelection;
+		static double finalMerge;
+		static double finalQuick;
+		static double finalInsertion;
+		static double finalBubble;
+		
 		static ArrayList<TimeSort> results = new ArrayList<TimeSort>();
-		//THIS SHOULD BE ARRAYLIST::: static double[] results;
 		
 
 		public static void main(String[] args)
@@ -37,39 +43,38 @@ public class Sort
 						SelectionSort.pastSelection = System.currentTimeMillis();
 						SelectionSort.selectionSort(sSortArray);
 						SelectionSort.futureSelection = System.currentTimeMillis();
-						//results.add(new TimeSort("selection sort", SelectionSort.finalSelection))
-						System.out.println("seconds for Selection: " + SelectionSort.finalSelection);
+						finalSelection = (SelectionSort.futureSelection - SelectionSort.pastSelection) / 1000;
+						results.add(new TimeSort("selection sort", finalSelection));
+						
 						
 						MergeSortDemo.pastMerge = System.currentTimeMillis();
 						MergeSortDemo.mergeSort(mSortArray, mSortArray.length);
 						MergeSortDemo.futureMerge = System.currentTimeMillis();
-						//results.add(new TimeSort("merge sort", MergeSortDemo.finalMerge));
-						System.out.println("seconds for Merge: " +  MergeSortDemo.finalMerge);
+						finalMerge = (MergeSortDemo.futureMerge - MergeSortDemo.pastMerge) / 1000;
+						results.add(new TimeSort("merge sort", finalMerge));
 						
 						QuicksortInt.pastQuick = System.currentTimeMillis();
 						QuicksortInt.qsort(qSortArray);
 						QuicksortInt.futureQuick = System.currentTimeMillis();
-						//results.add(new TimeSort("quick sort", QuicksortInt.finalQuick));
-						System.out.println("seconds for Quick: " + QuicksortInt.finalQuick);
+						finalQuick = (QuicksortInt.futureQuick - QuicksortInt.pastQuick) / 1000;
+						results.add(new TimeSort("quick sort", finalQuick));
 						
 						
 						InsertionSort.pastInsertion = System.currentTimeMillis();
 						InsertionSort.insertionSort(iSortArray);
 						InsertionSort.futureInsertion = System.currentTimeMillis();
-						//results.add(new TimeSort("insertion sort", InsertionSort.finalMerge));
-						System.out.println("seconds for Insertion: " + InsertionSort.finalInsertion);
+						finalInsertion = (InsertionSort.futureInsertion - InsertionSort.pastInsertion) / 1000;
+						results.add(new TimeSort("insertion sort", finalInsertion));
 						
 						BubbleSort.pastBubble = System.currentTimeMillis();
 						BubbleSort.bubbleSort(bArray);
 						BubbleSort.futureBubble = System.currentTimeMillis();
-						//results.add(new TimeSort("bubble sort", BubbleSort.finalMerge));
-						System.out.println("seconds for Bubble: " + BubbleSort.finalBubble);
-						
-						
-						System.out.println();
+						finalBubble = (BubbleSort.futureBubble - BubbleSort.pastBubble) / 1000;
+						results.add(new TimeSort("bubble sort", finalBubble));
+					
 			
 				
-				//printFinal();
+				printFinal();
 			}
 		
 		public static void askParameters()
@@ -100,13 +105,17 @@ public class Sort
 		{
 			System.out.println("Number of Simulations: " + numSim);
 			System.out.println("Array size: " + numOfNums);
-
-//			Collections.sort(results, new TimeSorter());
-//			for(TimeSort t : results)
-//				{
-//					System.out.printf(t.getName() + " " + t.getTime());
-//					//printf code
-//				}
+			
+			Collections.sort(results, new TimeSorter());
+			for(TimeSort t : results)
+				{
+					System.out.println();
+					//15 spaces for this
+					System.out.printf("%-25s", t.getSortMethod() + ": ");
+					//6 spaces for this
+					System.out.printf("%-6s", t.getTime());
+		
+				}
 			
 		}
 		

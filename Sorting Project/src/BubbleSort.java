@@ -5,7 +5,7 @@ public class BubbleSort
 		static double pastBubble;
 		static double futureBubble;
 		
-		static double finalBubble;
+		
 		
 		public static void bubbleSort(int[] arr) 
 			{
@@ -29,6 +29,6 @@ public class BubbleSort
 		        	}
 		        
 				
-				finalBubble = (futureBubble - pastBubble) / 1000;
+				
 		    }  
 	}

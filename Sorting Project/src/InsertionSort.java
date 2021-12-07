@@ -5,7 +5,7 @@ public class InsertionSort
 		static double pastInsertion;
 		static double futureInsertion;
 		
-		static double finalInsertion;
+		
 		
 		public static void insertionSort(int[ ] elements)
 			{
@@ -24,7 +24,7 @@ public class InsertionSort
 			 		
 			 		}
 			 	
-				finalInsertion = (futureInsertion - pastInsertion) / 1000;
+				
 			 	
 			 		
 			}

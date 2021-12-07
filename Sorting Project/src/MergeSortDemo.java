@@ -7,7 +7,7 @@ class MergeSortDemo
 		static double pastMerge;
 		static double futureMerge;
 		
-		static double finalMerge;
+
 		
 		public static void merge(int[] left_arr, int[] right_arr, int[] arr, int left_size, int right_size)
 			{
@@ -69,7 +69,7 @@ class MergeSortDemo
 				merge(left_arr, right_arr, arr, mid, len - mid);
 
 				
-				finalMerge = (futureMerge - pastMerge) / 1000;
+				
 				
 			}
 
